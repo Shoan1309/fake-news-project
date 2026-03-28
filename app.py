@@ -4,6 +4,7 @@ import pickle
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 
 import re
+import h5py
 import nltk
 from nltk.corpus import stopwords
 from nltk.stem.porter import PorterStemmer
