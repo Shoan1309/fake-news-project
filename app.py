@@ -1,14 +1,12 @@
 import streamlit as st
-import tensorflow as tf
-import pickle
 import numpy as np
-from tensorflow.keras.preprocessing.sequence import pad_sequences
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Embedding, LSTM, Dense
+import pickle
 import re
 import nltk
 from nltk.corpus import stopwords
 from nltk.stem.porter import PorterStemmer
+from tensorflow.keras.preprocessing.sequence import pad_sequences
+import tf_keras
 
 def preprocess(text):
     review = re.sub('[^a-zA-Z]', ' ', text)
@@ -21,7 +19,7 @@ def preprocess(text):
 ps = PorterStemmer()
 nltk.download('stopwords')
 
-model = tf.keras.models.load_model("model.h5", compile=False, safe_mode=False)
+model = tf_keras.models.load_model("model.h5", compile=False)
 
 with open("tokenizer.pkl", "rb") as f:
     tokenizer = pickle.load(f)
