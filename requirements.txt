@@ -3,3 +3,4 @@ tensorflow==2.13.0
 numpy
 pandas
 nltk
+protobuf==3.20.3
