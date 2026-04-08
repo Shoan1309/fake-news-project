@@ -21,7 +21,7 @@ def preprocess(text):
 ps = PorterStemmer()
 nltk.download('stopwords')
 
-model = tf.keras.models.load_model("model_new.keras")
+model = tf.keras.models.load_model("model.h5")
 
 with open("tokenizer.pkl", "rb") as f:
     tokenizer = pickle.load(f)
